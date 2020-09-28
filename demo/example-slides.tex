@@ -4,6 +4,7 @@
 %% Wir benutzen das beamer-theme 'hsbo'
 %%
 \usetheme[numbering=fullbar]{hsbo}
+\usecolortheme{hsbo}
 \usepackage{tikz}
 
 \title{Beispiel-Titel}
@@ -69,7 +70,31 @@
 \end{center}
 
 Der {\ttfamily \textbackslash alert\{some text\}} Befehl verwendet die Farbe {\ttfamily hsbo}
+\end{frame}
 
+
+%%
+%% sample tikz picture
+%%
+\begin{frame}{Folie - Farben 2}
+Ein Beispiel Scatter-Plot mit den Hauptfarben:
+\begin{center}
+\begin{tikzpicture}[scale=0.65,transform shape]
+\draw[->,thick] (0,0) -- (10,0);
+\draw[->,thick] (0,0) -- (0,7);
+\input{example-plot}
+
+% \fill[hsbo] (1,-1) rectangle (0.5,-0.5);
+\node[rectangle,fill=hsbo,inner sep=0pt,text width=0cm,minimum height=0.25cm,minimum width=0.25cm] at (1,-0.5) {};
+\node[anchor=west] at (1.25,-0.5) {Zufall 1};
+
+\node[rectangle,fill=blau,inner sep=0pt,text width=0cm,minimum height=0.25cm,minimum width=0.25cm] at (3.5,-0.5) {};
+\node[anchor=west] at (3.75,-0.5) {Zufall 2};
+
+\node[rectangle,fill=grau,inner sep=0pt,text width=0cm,minimum height=0.25cm,minimum width=0.25cm] at (6,-0.5) {};
+\node[anchor=west] at (6.25,-0.5) {Zufall 3};
+\end{tikzpicture}
+\end{center}
 \end{frame}
 
 \end{document}

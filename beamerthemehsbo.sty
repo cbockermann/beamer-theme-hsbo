@@ -1,9 +1,9 @@
-% Copyright (C) 2018-2020 Pasquale Claudio Africa and the LaTeX community.
-% A full list of contributors can be found at
+% Copyright (C) 2020 Christian Bockermann
 %
-%     https://github.com/elauksap/hsbo-beamertheme
+%     https://github.com/cbockermann/beamer-theme-hsbo
 % 
-% This file is part of beamerthemehsbo.
+% This file is part of beamerthemehsbo. 
+% beamerthemehsbo is directly derived from beamerthemefocus by Pasquale Claudio Africa.
 % 
 % beamerthemehsbo is free software: you can redistribute it and/or modify
 % it under the terms of the GNU General Public License as published by
@@ -52,16 +52,6 @@
 \useinnertheme{hsbo}
 \useoutertheme{hsbo}
 
-
-
-\usetheme[numbering=fullbar]{hsbo}
-\usecolortheme{hsbo}
-
-\definecolor{blue0}{RGB}{102,179,255}
-\definecolor{blue1}{RGB}{204,230,255}
-\definecolor{blue2}{RGB}{77,136,255}
-\definecolor{ce6f7ff}{RGB}{230,247,255}
-
 \addtobeamertemplate{block begin}{\pgfsetfillopacity{0.75}}{\pgfsetfillopacity{1}}
 
 \defbeamertemplate{block begin}{notitle}
@@ -70,8 +60,6 @@
   \begin{beamercolorbox}[colsep*=.75ex,vmode]{block body}%
     \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
 }
-
-% \setbeamertemplate*{frametitle}[hsbo]
 
 \setbeamerfont{sectiontitle}{size=\huge, series=\bfseries}
 \setbeamerfont{frametitle}{size=\Large}

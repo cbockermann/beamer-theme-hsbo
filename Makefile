@@ -3,7 +3,7 @@
 #
 #HSBO_DIR=$${HOME}/Library/texmf/tex/latex/beamer-hsbo
 #HSBO_DIR=$${HOME}/.texmf/tex/latex/beamer-hsbo
-HSBO_DIR=$(shell kpsewhich -var-value=TEXMFHOME)
+HSBO_DIR=$(shell kpsewhich -var-value=TEXMFHOME)/tex/latex/beamer-hsbo
 
 # ifeq ($(OS),Windows_NT)
 # 	@echo "Windows currently not supported!"
@@ -27,5 +27,6 @@ install:
 
 
 examples:
-	@echo "Compiling example-slides..."
-	@pdflatex example-slides > /dev/null
+	echo "Compiling example-slides..."
+	python3 demo/scatter.py > demo/example-plot.tex
+	cd demo && pdflatex example-slides

@@ -190,14 +190,19 @@
     \ifnum\mainend<0 % From package appendixnumberbeamer.
         \settoheight{\hsbo@pbar@height}{\usebeamerfont{footline}1234567890/}%
         \addtolength{\hsbo@pbar@height}{6pt}%
+        \setbeamertemplate{footline}[fullbar]
         %
         \ifx\beamer@hsbo@numbering\beamer@hsbo@numberingprogressbar%
             \setbeamertemplate{footline}[progressbar]%
         \else%
             \ifx\beamer@hsbo@numbering\beamer@hsbo@numberingfullbar%
                 \setbeamertemplate{footline}[fullbar]%
+            \else
             \fi%
         \fi%
+%        \ifx\beamer@hsbo@numbering\beamer@hsbo@none
+%            \setbeamertemplate{footline}[none]
+%        \fi
         %
         \hsbo@calculatefootheight%
     \fi%
