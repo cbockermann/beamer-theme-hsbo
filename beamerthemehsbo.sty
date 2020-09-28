@@ -1,0 +1,86 @@
+% Copyright (C) 2018-2020 Pasquale Claudio Africa and the LaTeX community.
+% A full list of contributors can be found at
+%
+%     https://github.com/elauksap/hsbo-beamertheme
+% 
+% This file is part of beamerthemehsbo.
+% 
+% beamerthemehsbo is free software: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation, either version 3 of the License, or
+% (at your option) any later version.
+% 
+% beamerthemehsbo is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+% GNU General Public License for more details.
+% 
+% You should have received a copy of the GNU General Public License
+% along with beamerthemehsbo. If not, see <http://www.gnu.org/licenses/>.
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerthemehsbo}[2020/04/15 v2.6 hsbo Beamer theme]
+
+\mode<presentation>
+
+
+% THEME OPTIONS. ---------------------------------------------------------------
+\DeclareOptionBeamer{numbering}{%
+    \PassOptionsToPackage{numbering=#1}{beamerouterthemehsbo}
+}
+
+\newif\if@hsbo@loadfirafonts
+\@hsbo@loadfirafontstrue
+
+\DeclareOptionBeamer{nofirafonts}{\@hsbo@loadfirafontsfalse}
+\ProcessOptionsBeamer
+
+
+% LOAD EXTERNAL PACKAGES. ------------------------------------------------------
+\if@hsbo@loadfirafonts
+    \RequirePackage[T1]{fontenc}
+    
+    \PassOptionsToPackage{type1}{FiraSans}
+    \PassOptionsToPackage{type1}{FiraMono}
+    
+    \RequirePackage{FiraSans}
+    \RequirePackage{FiraMono}
+\fi
+
+\usecolortheme{hsbo}
+\usefonttheme{hsbo}
+\useinnertheme{hsbo}
+\useoutertheme{hsbo}
+
+
+
+\usetheme[numbering=fullbar]{hsbo}
+\usecolortheme{hsbo}
+
+\definecolor{blue0}{RGB}{102,179,255}
+\definecolor{blue1}{RGB}{204,230,255}
+\definecolor{blue2}{RGB}{77,136,255}
+\definecolor{ce6f7ff}{RGB}{230,247,255}
+
+\addtobeamertemplate{block begin}{\pgfsetfillopacity{0.75}}{\pgfsetfillopacity{1}}
+
+\defbeamertemplate{block begin}{notitle}
+{
+  \usebeamerfont{block body}%
+  \begin{beamercolorbox}[colsep*=.75ex,vmode]{block body}%
+    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+}
+
+% \setbeamertemplate*{frametitle}[hsbo]
+
+\setbeamerfont{sectiontitle}{size=\huge, series=\bfseries}
+\setbeamerfont{frametitle}{size=\Large}
+
+\setbeamertemplate{navigation symbols}{}
+
+
+% SET MARGINS. -----------------------------------------------------------------
+\setbeamersize{text margin left=0.75cm, text margin right=0.75cm}
+\setlength{\leftmargini}{0.75cm}
+
+\mode<all>
