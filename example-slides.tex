@@ -1,0 +1,75 @@
+\documentclass[t,german]{beamer}
+
+%%
+%% Wir benutzen das beamer-theme 'hsbo'
+%%
+\usetheme[numbering=fullbar]{hsbo}
+\usepackage{tikz}
+
+\title{Beispiel-Titel}
+\subtitle{Einführung in das HSBO-Thema}
+
+\author{Dr. Christian Bockermann}
+\institute{Hochschule Bochum}
+\date{Semester Year/Year+1}
+
+\begin{document}
+
+%%
+%% Titel-Folie
+%%
+\begin{frame}[fragile]
+\maketitle
+\end{frame}
+
+\section{Beispiel-Foliensatz}
+
+%%
+%% Beispiel - Folie-1
+%%
+\begin{frame}{Folie Titel-1}
+\textbf{\alert{Beispiele}} sind wichtig für das Verständnis
+
+\begin{itemize}
+	\item Sie erklären anschaulich, wie Dinge in der Praxis laufen
+	\item Sie geben einen schnellen Einstieg zum eigenen Handeln
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Folie - Farben}
+
+\textbf{Das Thema HSBO definiert ein paar \alert{Farben}}:
+
+\medskip
+
+\begin{center}
+\begin{tikzpicture}
+\tikzstyle{box}=[inner sep=0pt,minimum width=0.5cm,minimum height=0.5cm,text width=0cm]
+\node[box,fill=hsbo] at (0,0) {};
+\node[anchor=west] at (0.75,0) {Die Farbe {\ttfamily \textbackslash color\{hsbo\}}};
+
+\node[box,fill=blau0] at (0,-0.75) {};
+\node[anchor=west] at (0.75,-0.75) {Die Farbe {\ttfamily \textbackslash color\{blau0\}}};
+
+\node[box,fill=blau1] at (0,-1.5) {};
+\node[anchor=west] at (0.75,-1.5) {Die Farbe {\ttfamily \textbackslash color\{blau1\}}};
+
+\node[box,fill=blau2] at (0,-2.25) {};
+\node[anchor=west] at (0.75,-2.25) {Die Farbe {\ttfamily \textbackslash color\{blau2\}}};
+
+\node[box,fill=grau0] at (0,-3) {};
+\node[anchor=west] at (0.75,-3) {Die Farbe {\ttfamily \textbackslash color\{grau0\}}};
+
+\node[box,fill=grau1] at (0,-3.75) {};
+\node[anchor=west] at (0.75,-3.75) {Die Farbe {\ttfamily \textbackslash color\{grau1\}}};
+
+
+\end{tikzpicture}
+\end{center}
+
+Der {\ttfamily \textbackslash alert\{some text\}} Befehl verwendet die Farbe {\ttfamily hsbo}
+
+\end{frame}
+
+\end{document}
