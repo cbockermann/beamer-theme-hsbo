@@ -1,7 +1,9 @@
 #
 # On MacOS, the default user dir for latex files is $HOME/Library/texmf/
 #
-HSBO_DIR=$${HOME}/Library/texmf/tex/latex/beamer-hsbo
+#HSBO_DIR=$${HOME}/Library/texmf/tex/latex/beamer-hsbo
+#HSBO_DIR=$${HOME}/.texmf/tex/latex/beamer-hsbo
+HSBO_DIR=$(shell kpsewhich -var-value=TEXMFHOME)
 
 # ifeq ($(OS),Windows_NT)
 # 	@echo "Windows currently not supported!"
