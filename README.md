@@ -6,9 +6,24 @@ coporate design of the [Bochum University of Applied Sciences](https://www.hochs
 ## Setup / Install
 
 The package provides a `Makefile` which installs all required files to the user `texmf` directory.
-For Mac OS this is
+The user texmf directory is determined with the `kpsewhich` tool using the `TEXMFHOME` variable.
+This works for TeXLive on MacOS and Ubuntu.
 
-	`/Users/USERNAME/Library/texmf/tex/latex/beamer-hsbo`
+The package installs fine with a simple
 
-For Linux this *should be*  `/home/USERNAME/.texmf/tex/latex/beamer-hsbo` but is currently not
-implemented in the Makefile, yet ;-)
+	make install
+
+which copies the beamer style files to the `texmf` directory provided by `kpsewhich`.
+
+
+## Requirements
+
+The theme uses LaTeX beamer with the pgf package and the Fira fonts. 
+
+
+### Ubuntu
+
+The required TeX packages and fonts are provided by the following Ubuntu packages:
+
+  1. `texlive-latex-extra`
+  2. `texlife-fonts-extra`
