@@ -164,4 +164,49 @@
 %     \end{frame}%
 % }
 
+
+%%
+%% ----------- commands \exercise, \tryit and \tryout  
+%%
+\newcommand{\exercise}[1]{
+\hfill
+\begin{minipage}[t]{0.1\textwidth}
+\vspace{0pt}
+\includegraphics[scale=0.15]{graphics/notebook.pdf}
+\end{minipage}
+\hspace{1ex}
+\begin{minipage}[t]{0.7\textwidth}
+  \color{blue2!90!black}#1
+\end{minipage}
+\hfill
+}
+
+
+\newcommand{\tryit}[1]{
+    \begin{tikzpicture}[overlay]
+        \node at #1 {
+            \includegraphics[scale=0.075]{graphics/notebook.pdf}
+        };
+    \end{tikzpicture}
+}
+
+\newcommand{\tryout}{
+\begin{center}
+  \begin{tikzpicture}
+    \draw[white] (-0.75,-0.5) rectangle (7.5,0.5);
+    \node (N) at (0,0) {
+        \includegraphics[scale=0.1]{graphics/notebook.pdf}
+    };
+    \node[anchor=west] (T) at (1,0) {
+        \hspace{0.5ex}\color{blue2!90}Probieren Sie es im Notebook aus!
+    };
+    \draw[blue2,ultra thick,>=triangle 45,->,shorten >=0.35ex] (T) -- (N);
+  \end{tikzpicture}
+\end{center}
+}
+%%
+%%
+%%
+
+
 \mode<all>
