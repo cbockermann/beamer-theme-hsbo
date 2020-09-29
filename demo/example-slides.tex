@@ -4,8 +4,9 @@
 %% Wir benutzen das beamer-theme 'hsbo'
 %%
 \usetheme[numbering=fullbar]{hsbo}
-\usecolortheme{hsbo}
-\usepackage{tikz}
+%\usecolortheme{hsbo}
+\usepackage{tikz,verbatimbox}
+
 
 \title{Beispiel-Titel}
 \subtitle{Einführung in das HSBO-Thema}
@@ -15,6 +16,23 @@
 \date{Semester Year/Year+1}
 
 \begin{document}
+\begin{myverbbox}{\exampleSlide}
+\documentclass{beamer}
+\usetheme{hsbo}
+
+\begin{document}
+
+\begin{frame}{Folie Titel-1}
+  \textbf{\alert{Beispiele}} sind wichtig für das Verständnis
+  \begin{itemize}
+  	 \item Sie erklären anschaulich, wie Dinge in der Praxis laufen
+    \item Sie geben einen schnellen Einstieg zum eigenen Handeln
+  \end{itemize}
+\end{frame}
+
+\end{document}
+\end{myverbbox}
+
 
 %%
 %% Titel-Folie
@@ -28,55 +46,120 @@
 %%
 %% Beispiel - Folie-1
 %%
-\begin{frame}{Folie Titel-1}
+\begin{frame}[fragile]{Folie Titel-1}
 \textbf{\alert{Beispiele}} sind wichtig für das Verständnis
 
 \begin{itemize}
 	\item Sie erklären anschaulich, wie Dinge in der Praxis laufen
 	\item Sie geben einen schnellen Einstieg zum eigenen Handeln
 \end{itemize}
+
+\begin{center}
+\begin{tikzpicture}
+\node[scale=0.7,anchor=west] at (0,0) {\exampleSlide};
+
+\onslide<2->{
+	\draw[draw=hsbo,thick] (-0.125,1.65) rectangle (5,2.35);
+	\node[anchor=west,text width=4cm,align=center,scale=0.75] at (5.5,2) {{\textbf{Ein {\ttfamily beamer} Dokument mit Thema {\ttfamily hsbo}}}};
+	\draw[hsbo,thick] (5,2) -- (5.5,2);
+}
+
+\end{tikzpicture}
+\end{center}
 \end{frame}
+
 
 
 \begin{frame}{Folie - Farben}
 
-\textbf{Das Thema HSBO definiert ein paar \alert{Farben}}:
-
-\medskip
+\textbf{Das Thema HSBO definiert ein drei \alert{Grundfarben}}:
 
 \begin{center}
 \begin{tikzpicture}
 \tikzstyle{box}=[inner sep=0pt,minimum width=0.5cm,minimum height=0.5cm,text width=0cm]
 \node[box,fill=hsbo] at (0,0) {};
-\node[anchor=west] at (0.75,0) {Die Farbe {\ttfamily \textbackslash color\{hsbo\}}};
+\node[anchor=west] at (0.75,0) {Die Farbe {\ttfamily \textbackslash color\{rot\}} = {\ttfamily \textbackslash color\{hsbo\}}};
 
-\node[box,fill=blau0] at (0,-0.75) {};
-\node[anchor=west] at (0.75,-0.75) {Die Farbe {\ttfamily \textbackslash color\{blau0\}}};
+\node[box,fill=blau] at (0,-0.75) {};
+\node[anchor=west] at (0.75,-0.75) {Die Farbe {\ttfamily \textbackslash color\{blau\}}};
 
-\node[box,fill=blau1] at (0,-1.5) {};
-\node[anchor=west] at (0.75,-1.5) {Die Farbe {\ttfamily \textbackslash color\{blau1\}}};
+\node[box,fill=grau] at (0,-1.5) {};
+\node[anchor=west] at (0.75,-1.5) {Die Farbe {\ttfamily \textbackslash color\{grau\}}};
 
-\node[box,fill=blau2] at (0,-2.25) {};
-\node[anchor=west] at (0.75,-2.25) {Die Farbe {\ttfamily \textbackslash color\{blau2\}}};
+% \node[box,fill=blau2] at (0,-2.25) {};
+% \node[anchor=west] at (0.75,-2.25) {Die Farbe {\ttfamily \textbackslash color\{blau2\}}};
 
-\node[box,fill=grau0] at (0,-3) {};
-\node[anchor=west] at (0.75,-3) {Die Farbe {\ttfamily \textbackslash color\{grau0\}}};
+% \node[box,fill=grau0] at (0,-3) {};
+% \node[anchor=west] at (0.75,-3) {Die Farbe {\ttfamily \textbackslash color\{grau0\}}};
 
-\node[box,fill=grau1] at (0,-3.75) {};
-\node[anchor=west] at (0.75,-3.75) {Die Farbe {\ttfamily \textbackslash color\{grau1\}}};
+% \node[box,fill=grau1] at (0,-3.75) {};
+% \node[anchor=west] at (0.75,-3.75) {Die Farbe {\ttfamily \textbackslash color\{grau1\}}};
 
+% \node[box,fill=grau2] at (0,-4.5) {};
+% \node[anchor=west] at (0.75,-4.5) {Die Farbe {\ttfamily \textbackslash color\{grau2\}}};
 
 \end{tikzpicture}
 \end{center}
+
+Die Abstufungen sind jeweils {\ttfamily farbe}={\ttfamily farbe0}, {\ttfamily farbe1}, {\ttfamily farbe2}.
+
+\smallskip
+
+Die Farbe {\ttfamily hsbo} ist dabei ein Alias für {\ttfamily rot}
+
+
+\medskip
 
 Der {\ttfamily \textbackslash alert\{some text\}} Befehl verwendet die Farbe {\ttfamily hsbo}
 \end{frame}
 
 
+\begin{frame}{Folien - Farben 2}
+
+Die drei Hauptfarben {\ttfamily rot} (={\ttfamily hsbo}), {\ttfamily blau} und {\ttfamily grau}.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.75,transform shape]
+
+\draw[black!20,ultra thick] (90:2cm) -- (0,0);
+\draw[black!20,ultra thick] (210:2cm) -- (0,0);
+\draw[black!20,ultra thick] (330:2cm) -- (0,0);
+
+\fill[rot] (90:2cm) circle (2ex);
+\node at (90:3cm) {\ttfamily rot};
+
+\fill[rot1] (120:2cm) circle (2ex);
+\node at (120:3cm) {\ttfamily rot1};
+
+\fill[rot2] (150:2cm) circle (2ex);
+\node at (150:3cm) {\ttfamily rot2};
+
+\fill[blau] (210:2cm) circle (2ex);
+\node at (210:3cm) {\ttfamily blau};
+
+\fill[blau1] (240:2cm) circle (2ex);
+\node at (240:3cm) {\ttfamily blau1};
+
+\fill[blau2] (270:2cm) circle (2ex);
+\node at (270:3cm) {\ttfamily blau2};
+
+\fill[grau] (330:2cm) circle (2ex);
+\node at (330:3cm) {\ttfamily grau};
+
+\fill[grau1] (360:2cm) circle (2ex);
+\node[] at (360:3cm) {\ttfamily grau1};
+
+\fill[grau2] (30:2cm) circle (2ex);
+\node at (30:3cm) {\ttfamily grau2};
+\end{tikzpicture}
+\end{center}
+
+\end{frame}
+
 %%
 %% sample tikz picture
 %%
-\begin{frame}{Folie - Farben 2}
+\begin{frame}{Folie - Farben 3}
 Ein Beispiel Scatter-Plot mit den Hauptfarben:
 \begin{center}
 \begin{tikzpicture}[scale=0.65,transform shape]
@@ -97,4 +180,75 @@ Ein Beispiel Scatter-Plot mit den Hauptfarben:
 \end{center}
 \end{frame}
 
+
+
+
+\begin{frame}[fragile]{VBA Code}
+Ein Beispiel für VBA Code in Farbe:
+\begin{vba}
+Sub ConvertToValues()
+  With ActiveSheet.UsedRange.Value = .Value
+  End With
+End Sub
+\end{vba}
+
+\end{frame}
+
+
+%%
+%%
+%%
+\begin{myverbbox}{vbaCode}
+\begin{frame}[fragile]{VBA Code}
+Ein Beispiel für VBA Code in Farbe:
+\begin{vba}
+  Sub ConvertToValues()
+    With ActiveSheet.UsedRange.Value = .value
+    End With
+  End Sub
+\end{vba}
+\end{frame}
+\end{myverbbox}
+
+\begin{frame}[fragile]{VBA Code - TeX Code}
+Die vorherige Folie mit VBA Code wurde definiert durch:
+
+\begin{center}
+\begin{tikzpicture}
+\node[scale=0.75] at (0,0) {\vbaCode};
+\end{tikzpicture}
+\end{center}
+Die {\ttfamily \textbackslash begin\{vba\} .. \textbackslash end\{vba\}} Umgebung
+übernimmt die Formatierung des VBA Codes
+\end{frame}
+
+\begin{myverbbox}{pyExample}
+\begin{frame}[fragile]{Python Code}
+  \begin{python}
+     ...
+  \end{python}
+\end{frame}
+\end{myverbbox}
+
+\begin{frame}[fragile]{Python Code}
+Auf die gleiche Weise steht mit der \alert{python} Umgebung auch eine
+Möglichkeit für Python Code zur Verfügung:
+
+\smallskip
+\begin{python}
+def func(x):
+	"""Beispiel Funktion mit Doc String"""
+	return x**3 + 2*x**2 - 17
+\end{python}
+
+\medskip
+
+Wichtig ist der Zusatz {\color{blau0}\ttfamily [fragile]} bei dem umgebenden {\ttfamily frame}, da sonst die Code Umgebungen nicht funktionieren:
+
+\begin{center}
+\begin{tikzpicture}[]
+	\node at (0,0) {\pyExample};
+\end{tikzpicture}
+\end{center}
+\end{frame}
 \end{document}
