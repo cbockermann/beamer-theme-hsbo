@@ -7,6 +7,9 @@ Das Layout ist eine Modifikation des ursprünglichen [Focus beamer theme](https:
 von [Pasquale Claudio Africa](https://github.com/elauksap).
 
 
+Das Repository enthält auch [Beispiel Folien mit dem Layout](https://github.com/cbockermann/beamer-theme-hsbo/blob/master/demo/example-slides.pdf).
+
+
 ## Voraussetzungen
 
 Das Layout benutzt LaTeX beamer mit dem `pgf` Paket und den *Fira Fonts*. Für die
