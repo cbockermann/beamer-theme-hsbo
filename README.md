@@ -51,13 +51,13 @@ aussehen:
    * `tex`
      * `latex`
        * `beamer-hsbo`
- ***** beamercolorthemehsbo.sty
- ***** beamerfontthemehsbo.sty
- ***** beamerinnerthemehsbo.sty
- ***** beamerouterthemehsbo.sty
- ***** beamerthemehsbo.sty
- ***** `graphics`
- ****** alle Dateien aus dem `graphics` Ordner
+         * beamercolorthemehsbo.sty
+         * beamerfontthemehsbo.sty
+         * beamerinnerthemehsbo.sty
+         * beamerouterthemehsbo.sty
+         * beamerthemehsbo.sty
+         * `graphics`
+           * alle Dateien aus dem `graphics` Ordner
 
 
 
