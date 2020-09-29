@@ -48,9 +48,9 @@ Folgendermaßen sollte die Struktur unterhalb des `TEXMFHOME` Verzeichnisses nac
 aussehen:
 
  * `TEXMFHOME`
- ** `tex`
- *** `latex`
- **** `beamer-hsbo`
+   * `tex`
+     * `latex`
+       * `beamer-hsbo`
  ***** beamercolorthemehsbo.sty
  ***** beamerfontthemehsbo.sty
  ***** beamerinnerthemehsbo.sty
