@@ -47,17 +47,17 @@ zur Installation enthält.
 Folgendermaßen sollte die Struktur unterhalb des `TEXMFHOME` Verzeichnisses nach der Installation
 aussehen:
 
-    * `TEXMFHOME`
-    ** `tex`
-    *** `latex`
-    **** `beamer-hsbo`
-    ***** beamercolorthemehsbo.sty
-    ***** beamerfontthemehsbo.sty
-    ***** beamerinnerthemehsbo.sty
-    ***** beamerouterthemehsbo.sty
-    ***** beamerthemehsbo.sty
-    ***** `graphics`
-    ****** alle Dateien aus dem `graphics` Ordner
+ * `TEXMFHOME`
+ ** `tex`
+ *** `latex`
+ **** `beamer-hsbo`
+ ***** beamercolorthemehsbo.sty
+ ***** beamerfontthemehsbo.sty
+ ***** beamerinnerthemehsbo.sty
+ ***** beamerouterthemehsbo.sty
+ ***** beamerthemehsbo.sty
+ ***** `graphics`
+ ****** alle Dateien aus dem `graphics` Ordner
 
 
 
