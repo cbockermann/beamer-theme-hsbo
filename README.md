@@ -1,40 +1,71 @@
-# LaTeX Beamer Theme for HS BO Slides
+# LaTeX Beamer Theme für HS BO Folien
 
-This package provides a set of styles for a latex beamer theme which follows the
-coporate design of the [Bochum University of Applied Sciences](https://www.hochschule-bochum.de).
+Diese Paket definiert ein Layout for Latex Beamer Folien im Sinne des
+Coporate Designs der [Hochschule Bochum](https://www.hochschule-bochum.de).
 
-The theme is derived from the [Focus beamer theme](https://github.com/elauksap/focus-beamertheme)
-written by [Pasquale Claudio Africa](https://github.com/elauksap).
+Das Layout ist eine Modifikation des ursprünglichen [Focus beamer theme](https://github.com/elauksap/focus-beamertheme)
+von [Pasquale Claudio Africa](https://github.com/elauksap).
 
 
-## Requirements
+## Voraussetzungen
 
-The theme uses LaTeX beamer with the pgf package and the Fira fonts. 
+Das Layout benutzt LaTeX beamer mit dem `pgf` Paket und den *Fira Fonts*. Für die
+Formatierung von VBA und Python Code verwendet das Layout das `listings` Paket.
+
 
 
 ### Mac OS
 
-The default MacTex already installs the required beamer and pgf packages as well as the fonts.
+In der MacTex Distribution sind die `beamer` und `pgf` Pakete sowie die Fonts bereits enthalten.
 
 
 ### Ubuntu
 
-The required TeX packages and fonts are provided by the following Ubuntu packages:
+Unter Ubuntu werden die Pakete mit den folgenden Ubuntu Paketen installiert:
 
   1. `texlive-latex-extra`
   2. `texlife-fonts-extra`
+
+
+### Windows / other
+
+Unter Windows sollte es mit TexLive oder MiKTeX auch keine Probleme sein, die Pakete `beamer`, `pgf`
+und `listings` zu installieren (sofern nicht direkt mitinstalliert).
 
 
 
 
 ## Setup / Install
 
-The package provides a `Makefile` which installs all required files to the user `texmf` directory.
-The user texmf directory is determined with the `kpsewhich` tool using the `TEXMFHOME` variable.
-This works for TeXLive on MacOS and Ubuntu.
+Für die Installation müssen die `beamer*hsbo.sty` Dateien und das `graphics` Verzeichnis in ein
+Verzeichnis kopiert werden, das von der LaTeX Installation mit durchsucht wird.
 
-The package installs fine with a simple
+Typischerweise ist das ein `texmf` Verzeichnis im Benutzerordner oder ähnliches. Mit dem Tool
+`kpsewhich` läßt sich auf Unix-Systemen die `TEXMFHOME` Variable abfragen, die das Verzeichnis
+zur Installation enthält.
+
+Folgendermaßen sollte die Struktur unterhalb des `TEXMFHOME` Verzeichnisses nach der Installation
+aussehen:
+
+    * `TEXMFHOME`
+    ** `tex`
+    *** `latex`
+    **** `beamer-hsbo`
+    ***** beamercolorthemehsbo.sty
+    ***** beamerfontthemehsbo.sty
+    ***** beamerinnerthemehsbo.sty
+    ***** beamerouterthemehsbo.sty
+    ***** beamerthemehsbo.sty
+    ***** `graphics`
+    ****** alle Dateien aus dem `graphics` Ordner
+
+
+
+### Unix / Linux / Mac OS
+
+Das mitgelieferte `Makefile` kopiert mit
 
 	make install
 
-which copies the beamer style files to the `texmf` directory provided by `kpsewhich`.
+alle erforderlichen Dateien in das Verzeichnis `tex/latex/beamer-hsbo` unterhalb des `TEXMFHOME`
+Verzeichnisses.
