@@ -19,7 +19,7 @@
 % along with beamerthemehsbo. If not, see <http://www.gnu.org/licenses/>.
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{beamerthemehsbo}[2020/04/15 v2.6 hsbo Beamer theme]
+\ProvidesPackage{beamerthemehsbo}[2020/09/30 v0.1 hsbo Beamer theme]
 
 \mode<presentation>
 
@@ -52,6 +52,12 @@
 \useinnertheme{hsbo}
 \useoutertheme{hsbo}
 
+\RequirePackage{tikz}
+\usetikzlibrary{arrows,mindmap,trees}
+
+\RequirePackage{graphicx}
+\RequirePackage{ngerman}
+
 \addtobeamertemplate{block begin}{\pgfsetfillopacity{0.75}}{\pgfsetfillopacity{1}}
 
 \defbeamertemplate{block begin}{notitle}
@@ -81,10 +87,8 @@
 \renewcommand*{\lstlistingname}{Code Listing}
 \definecolor{gray}{gray}{0.5}
 \colorlet{commentcolour}{green!50!black}
-%\definecolor{pycomment}{green!50!black}
 \colorlet{stringcolour}{red!60!black}
 \colorlet{keywordcolour}{magenta!90!black}
-% \colorlet{keywordcolour}{green}
 \colorlet{exceptioncolour}{yellow!50!red}
 \colorlet{commandcolour}{blue!60!black}
 \colorlet{numpycolour}{blue!60!green}
@@ -146,7 +150,7 @@ otherkeywords={\%, \}, \{, \&, \|},
 keywordstyle=\color{keywordcolour}\bfseries,
 emph={and,break,class,continue,def,yield,del,elif,else,%
 except,exec,finally,for,from,global,if,import,as,in,%
-lambda,not,or,pass,print,raise,return,try,while,assert,with},
+lambda,not,or,pass,print,raise,return,try,while,assert,as,with},
 emphstyle=\color{blue}\bfseries,
 emph={[2]True, False, None},
 emphstyle=[2]\color{keywordcolour},
@@ -168,6 +172,8 @@ emph={[7]range},
 emphstyle={[7]\color{keywordcolour}\bfseries},
 % emph={[7]self},
 % emphstyle=[7]\bfseries,
+emph={[8]as},
+emphstyle={[8]\color{keywordcolour}\bfseries},
 literate=*%
 {:}{{\literatecolour:}}{1}%
 {=}{{\literatecolour=}}{1}%

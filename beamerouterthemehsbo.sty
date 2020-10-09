@@ -132,10 +132,12 @@
             \begin{tikzpicture}[inner xsep=0.5em, inner ysep=0.5ex]
                 \clip (0,0) rectangle ++(\paperwidth,\the\hsbo@pbar@height);
                 \fill[footline.bg] (0,0) rectangle ++(\paperwidth,\the\hsbo@pbar@height);
+
+                \node[anchor=west, footline.fg, scale=0.75] at ({0.25*\the\hsbo@pbar@leftoffset},{0.5*\hsbo@pbar@height}) {\strut\inserttitle\ - \strut\insertsubtitle};
                 
-                \node[anchor=east, footline.fg] at ({\paperwidth-\the\hsbo@pbar@rightoffset},{0.5*\hsbo@pbar@height}) {\strut\insertframenumber};
-                \node[footline.fg] at ({\paperwidth-\the\hsbo@pbar@rightoffset},{0.5*\hsbo@pbar@height}) {\strut/};
-                \node[anchor=west, footline.fg] at ({\paperwidth-\the\hsbo@pbar@rightoffset},{0.5*\hsbo@pbar@height}) {\strut\inserttotalframenumber};
+                \node[anchor=east, footline.fg, scale=0.75] at ({\paperwidth-0.75*\the\hsbo@pbar@rightoffset},{0.5*\hsbo@pbar@height}) {\strut\insertframenumber};
+                \node[footline.fg, scale=0.75] at ({\paperwidth-0.75*\the\hsbo@pbar@rightoffset},{0.5*\hsbo@pbar@height}) {\strut/};
+                \node[anchor=west, footline.fg, scale=0.75] at ({\paperwidth-0.75*\the\hsbo@pbar@rightoffset},{0.5*\hsbo@pbar@height}) {\strut\inserttotalframenumber};
             \end{tikzpicture}%
         \fi%
     \fi%
