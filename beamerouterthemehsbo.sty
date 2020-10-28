@@ -54,6 +54,20 @@
     \fi%
 }
 
+\defbeamertemplate*{frametitle}{wdh}{%
+    % If not title page.
+    \ifnum\value{realframenumber}>0%
+        \vspace{-1pt}%
+        \begin{beamercolorbox}[wd=\paperwidth,leftskip=0.55cm,rightskip=0.55cm,sep=0.2cm]{frametitleWDH}%
+            \strut\insertframetitle\strut%
+        \end{beamercolorbox}%
+        \begin{tikzpicture}[overlay]
+            % \node at (0,0) {\color{black} TEST};
+            \node[anchor=east] at (12,1) { \includegraphics[scale=0.175]{graphics/hsbo.pdf}};
+        \end{tikzpicture}
+    \fi%
+}
+
 
 % Plain header.
 \defbeamertemplate*{frametitle}{plain}{%
@@ -132,6 +146,33 @@
             \begin{tikzpicture}[inner xsep=0.5em, inner ysep=0.5ex]
                 \clip (0,0) rectangle ++(\paperwidth,\the\hsbo@pbar@height);
                 \fill[footline.bg] (0,0) rectangle ++(\paperwidth,\the\hsbo@pbar@height);
+
+                \node[anchor=west, footline.fg, scale=0.75] at ({0.25*\the\hsbo@pbar@leftoffset},{0.5*\hsbo@pbar@height}) {\strut\inserttitle\ - \strut\insertsubtitle};
+                
+                \node[anchor=east, footline.fg, scale=0.75] at ({\paperwidth-0.75*\the\hsbo@pbar@rightoffset},{0.5*\hsbo@pbar@height}) {\strut\insertframenumber};
+                \node[footline.fg, scale=0.75] at ({\paperwidth-0.75*\the\hsbo@pbar@rightoffset},{0.5*\hsbo@pbar@height}) {\strut/};
+                \node[anchor=west, footline.fg, scale=0.75] at ({\paperwidth-0.75*\the\hsbo@pbar@rightoffset},{0.5*\hsbo@pbar@height}) {\strut\inserttotalframenumber};
+            \end{tikzpicture}%
+        \fi%
+    \fi%
+}
+
+% Full bar footline - wdh
+\defbeamertemplate*{footline}{fullbarWDH}{%
+    % If not appendix.
+    \ifnum\mainend<0% From package appendixnumberbeamer.
+        %
+        \settowidth{\hsbo@pbar@leftoffset}{1}%
+        \addtolength{\hsbo@pbar@leftoffset}{1.5em}%
+        %
+        \settowidth{\hsbo@pbar@rightoffset}{\inserttotalframenumber}%
+        \addtolength{\hsbo@pbar@rightoffset}{1.5em}%
+        %
+        % If not title page.
+        \ifnum\value{realframenumber}>0%
+            \begin{tikzpicture}[inner xsep=0.5em, inner ysep=0.5ex]
+                \clip (0,0) rectangle ++(\paperwidth,\the\hsbo@pbar@height);
+                \fill[wdhBG] (0,0) rectangle ++(\paperwidth,\the\hsbo@pbar@height);
 
                 \node[anchor=west, footline.fg, scale=0.75] at ({0.25*\the\hsbo@pbar@leftoffset},{0.5*\hsbo@pbar@height}) {\strut\inserttitle\ - \strut\insertsubtitle};
                 
@@ -226,6 +267,14 @@
     \setbeamertemplate{frametitle}[plain]%
     %
     \setbeamertemplate{footline}[none]%
+}
+
+% Enable plain option.
+\define@key{beamerframe}{wdh}[true]{%
+    \setbeamertemplate{background canvas}[hsboplain]%
+    \setbeamertemplate{frametitle}[wdh]%
+    %
+    \setbeamertemplate{footline}[fullbarWDH]%
 }
 
 

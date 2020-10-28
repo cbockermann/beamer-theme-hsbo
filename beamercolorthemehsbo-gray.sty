@@ -30,15 +30,15 @@
 %\definecolor{blau2}{RGB}{204,230,255}
 
 
-\setbeamercolor{footline}{fg=white,bg=hsbo}
+\setbeamercolor{footline}{fg=white,bg=wdhBG}
 
-\setbeamercolor{structure}{fg=hsbo,bg=white}
-\setbeamercolor{footline}{fg=white,bg=hsbo}
+\setbeamercolor{structure}{fg=blau,bg=white}
+\setbeamercolor{footline}{fg=white,bg=wdhBG}
 \setbeamercolor{footlineWDH}{fg=white,bg=wdhBG}
 \setbeamercolor{normal text}{fg=black!70}
 
 \setbeamercolor{section in toc}{fg=black,bg=white}
-\setbeamercolor{alerted text}{fg=darkred!80!gray}
+\setbeamercolor{alerted text}{fg=blau}
 %\setbeamercolor*{palette primary}{fg=darkred!60!black,bg=gray!30!white}
 \setbeamercolor*{palette primary}{fg=white,bg=grau}
 
@@ -55,16 +55,30 @@
 
 %\setbeamercolor*{titlelike}{parent=palette primary}
 \setbeamercolor{titlelike}{parent=palette primary,fg=white}
-\setbeamercolor{frametitle}{bg=hsbo}
+\setbeamercolor{frametitle}{bg=wdhBG}
 \setbeamercolor{frametitleWDH}{bg=wdhBG}
 \setbeamercolor{frametitle right}{bg=gray!60!white}
 
 \setbeamercolor*{separation line}{}
 \setbeamercolor*{fine separation line}{}
 
-\setbeamercolor{item}{parent=local structure}
+\setbeamercolor{item}{parent=local structure,fg=black!40}
 \setbeamercolor{subitem}{parent=item}
 \setbeamercolor{subsubitem}{parent=subitem}
 
+
+\defbeamertemplate{itemize item}{hsbo-gray}
+{\scriptsize\raise1.25pt\hbox{\donotcoloroutermaths$\bullet$}}
+
+\defbeamertemplate{itemize subitem}{hsbo-gray}
+{\scriptsize\raise1.25pt\hbox{\donotcoloroutermaths$\bullet$}}
+
+\defbeamertemplate{itemize subsubitem}{hsbo-gray}
+{\scriptsize\raise1.25pt\hbox{\donotcoloroutermaths$\bullet$}}
+
+
+\setbeamertemplate{itemize item}[hsbo-gray]
+\setbeamertemplate{itemize subitem}[hsbo-gray]
+\setbeamertemplate{itemize subsubitem}[hsbo-gray]
 \mode
 <all>

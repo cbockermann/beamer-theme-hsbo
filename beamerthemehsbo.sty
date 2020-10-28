@@ -47,6 +47,7 @@
     \RequirePackage{FiraMono}
 \fi
 
+
 \usecolortheme{hsbo}
 \usefonttheme{hsbo}
 \useinnertheme{hsbo}
@@ -140,6 +141,7 @@
 %keepspaces=true,
 language=python,
 showtabs=true,
+escapechar=\§,
 tab=,
 tabsize=2,
 basicstyle=\ttfamily\footnotesize,%\setstretch{.5},
@@ -154,7 +156,7 @@ lambda,not,or,pass,print,raise,return,try,while,assert,as,with},
 emphstyle=\color{blue}\bfseries,
 emph={[2]True, False, None},
 emphstyle=[2]\color{keywordcolour},
-emph={[3]object,type,isinstance,copy,deepcopy,zip,enumerate,reversed,list,set,len,dict,tuple,xrange,execfile,real,imag,reduce,str,repr},
+emph={[3]object,type,isinstance,copy,deepcopy,zip,filter,map,enumerate,reversed,list,set,len,dict,tuple,xrange,execfile,real,imag,reduce,str,repr},
 emphstyle=[3]\color{commandcolour},
 emph={Exception,NameError,IndexError,SyntaxError,TypeError,ValueError,OverflowError,ZeroDivisionError},
 emphstyle=\color{exceptioncolour}\bfseries,
@@ -164,7 +166,7 @@ commentstyle=\color{commentcolour}\slshape,
 %emph={[4]1, 2, 3, 4, 5, 6, 7, 8, 9, 0},
 emph={[4]ode, fsolve, sqrt, exp, sin, cos,arctan, arctan2, arccos, pi,  array, norm, solve, dot, arange, isscalar, max, sum, flatten, shape, reshape, find, any, all, abs, plot, linspace, legend, quad, polyval,polyfit, hstack, concatenate,vstack,column_stack,empty,zeros,ones,rand,vander,grid,pcolor,eig,eigs,eigvals,svd,qr,tan,det,logspace,roll,min,mean,cumsum,cumprod,diff,vectorize,lstsq,cla,eye,xlabel,ylabel,squeeze},
 emphstyle=[4]\color{numpycolour},
-emph={[5]__init__,__add__,__mul__,__div__,__sub__,__call__,__getitem__,__setitem__,__eq__,__ne__,__nonzero__,__rmul__,__radd__,__repr__,__str__,__get__,__truediv__,__pow__,__name__,__future__,__all__},
+emph={[5]__init__,__add__,__mul__,__div__,__sub__,__call__,__getitem__,__setitem__,__eq__,__ne__,__nonzero__,__rmul__,__radd__,__repr__,__str__,__get__,__truediv__,__pow__,__name__,__future__,__all__,fit,predict},
 emphstyle=[5]\color{specmethodcolour},
 emph={[6]assert,yield},
 emphstyle=[6]\color{keywordcolour}\bfseries,
@@ -217,6 +219,7 @@ xleftmargin=.05\textwidth, xrightmargin=.05\textwidth
 
 \lstdefinestyle{mypythoninline}{
 style=mypython,%
+escapechar=\§,
 basicstyle=\ttfamily,%
 keywordstyle=\color{keywordcolour},%
 emphstyle={[7]\color{keywordcolour}},%

@@ -19,6 +19,8 @@ HSBO_DIR=$(shell kpsewhich -var-value=TEXMFHOME)/tex/latex/beamer-hsbo
 #     endif
 # endif
 
+all: install examples
+
 install:
 	@echo "Installing hsbo style files to '${HSBO_DIR}'"
 	@mkdir -p $(HSBO_DIR)
